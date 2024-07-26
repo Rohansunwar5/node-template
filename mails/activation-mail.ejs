@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background-color: #007BFF;
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer {
+      font-size: 12px;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .button {
+      background-color: #28a745;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="email-container">
+    <div class="header">
+      <h1>Activation Required</h1>
+    </div>
+    <div class="content">
+      <p>Hi there <%= user.name %>,</p>
+      <p>Please activate your account by entering the following code:</p>
+      <p><strong style="font-size: 24px;">
+          <%= activationCode %>
+        </strong></p>
+      <p>Or click the button below:</p>
+      <a href="https://example.com/activate?code=<%= activationCode %>" class="button">Activate Account</a>
+      <p>If you did not request this, please ignore this email.</p>
+    </div>
+    <div class="footer">
+      Regards,<br>
+      Your Company Name
+    </div>
+  </div>
+</body>
+
+</html>
